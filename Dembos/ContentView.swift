@@ -34,6 +34,7 @@ struct ContentView: View {
                     Text("Saltar")
                         .padding(16)
                         .foregroundColor(.gray)
+                        
                 }
                 
             }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75176CC82921C08A00DCEA00 /* AuthenticationLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75176CC72921C08A00DCEA00 /* AuthenticationLoginView.swift */; };
+		75176CCA2921C42C00DCEA00 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75176CC92921C42C00DCEA00 /* LoginEmailView.swift */; };
 		75613EB6292094BA00BE6D2F /* DembosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75613EB5292094BA00BE6D2F /* DembosApp.swift */; };
 		75613EB8292094BA00BE6D2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75613EB7292094BA00BE6D2F /* ContentView.swift */; };
 		75613EBA292094BB00BE6D2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75613EB9292094BB00BE6D2F /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75176CC72921C08A00DCEA00 /* AuthenticationLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationLoginView.swift; sourceTree = "<group>"; };
+		75176CC92921C42C00DCEA00 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
 		75613EB2292094BA00BE6D2F /* Dembos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dembos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75613EB5292094BA00BE6D2F /* DembosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DembosApp.swift; sourceTree = "<group>"; };
 		75613EB7292094BA00BE6D2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75176CC62921C07200DCEA00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75176CC72921C08A00DCEA00 /* AuthenticationLoginView.swift */,
+				75176CC92921C42C00DCEA00 /* LoginEmailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		75613EA9292094BA00BE6D2F = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +82,7 @@
 		75613EB4292094BA00BE6D2F /* Dembos */ = {
 			isa = PBXGroup;
 			children = (
+				75176CC62921C07200DCEA00 /* Views */,
 				75D18A0429209707006939E9 /* GoogleService-Info.plist */,
 				75613EB5292094BA00BE6D2F /* DembosApp.swift */,
 				75613EB7292094BA00BE6D2F /* ContentView.swift */,
@@ -170,8 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75176CC82921C08A00DCEA00 /* AuthenticationLoginView.swift in Sources */,
 				75613EB8292094BA00BE6D2F /* ContentView.swift in Sources */,
 				75613EB6292094BA00BE6D2F /* DembosApp.swift in Sources */,
+				75176CCA2921C42C00DCEA00 /* LoginEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
