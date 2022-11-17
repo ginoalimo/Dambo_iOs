@@ -22,11 +22,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct DembosApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var authenticationViewModel = AuthViewModel()
     
     var body: some Scene {
         WindowGroup {
           NavigationView {
-            ContentView()
+              
+              if let _ = authenticationViewModel.user{
+                  HomeView(authenticationViewModel: authenticationViewModel)
+              } else {
+                  OnboardingView(authenticationViewModel: authenticationViewModel)
+              }
           }
         }
       }

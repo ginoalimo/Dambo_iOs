@@ -1,22 +1,23 @@
 //
-//  LoginEmailView.swift
+//  RegisterEmailView.swift
 //  Dembos
 //
-//  Created by user231685 on 11/13/22.
+//  Created by user231685 on 11/14/22.
 //
 
 import SwiftUI
 
-struct LoginEmailView: View {
+struct RegisterEmailView: View {
     @ObservedObject var authenticationViewModel: AuthViewModel
     @State var emailField: String = ""
     @State var passField: String = ""
+    
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
             DismissView()
                 .padding(.top, 8)
             Group {
-                Text ("Bienvenido de nuevo a")
+                Text ("Bienvenido a")
                 Text("Dembos")
                     .bold()
                     .underline()
@@ -26,15 +27,14 @@ struct LoginEmailView: View {
             .font(.largeTitle)
             .tint(.primary)
             Group {
-                Text("Ingrese sus datos")
+                Text("Registrate en nuestra aplicacion")
                     .tint(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 2)
                 TextField("Ingrese correo electronico", text: $emailField)
                 TextField("Ingrese su contrasena", text: $passField)
-                Button("Login") {
-                    authenticationViewModel.login(email: emailField, password: passField)
-                }
+                Button("Registrarse") {
+                    authenticationViewModel.createNewUser(email: emailField, password: passField)              }
                 .padding(.top, 18)
                 .buttonStyle(.bordered)
                 .tint(.blue)
@@ -51,11 +51,12 @@ struct LoginEmailView: View {
             .padding(.horizontal, 64)
             Spacer()
         }
+        
     }
 }
 
-struct LoginEmailView_Previews: PreviewProvider {
+struct RegisterEmailView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginEmailView(authenticationViewModel: AuthViewModel())
+        RegisterEmailView(authenticationViewModel: AuthViewModel())
     }
 }

@@ -19,8 +19,10 @@ private let onBoardingConfig = [
     OnBoardingConfig(image: "onBoarding3", title: "Califiquenos", description: "Siempre es bueno dejar su feedback!")
 ]
 
-struct ContentView: View {
+struct OnboardingView: View {
+    @ObservedObject var authenticationViewModel: AuthViewModel
     @State private var currentStep: Int = 0
+    @State var navigated = false
     
     var body: some View {
         
@@ -75,31 +77,32 @@ struct ContentView: View {
             }
             .padding(.bottom, 24)
             
+          NavigationLink("", destination: AuthenticationLoginView(authenticationViewModel: authenticationViewModel), isActive: $navigated)
             
-            Button {
-                if self.currentStep < onBoardingConfig.count - 1 {
-                    self.currentStep += 1
-                } else {
-                    // Empecemos logica
+            
+                    Button {
+                        if self.currentStep < onBoardingConfig.count - 1 {
+                            self.currentStep += 1
+                        } else {
+                           self.navigated.toggle()
+                        }
+                        
+                    } label: {
+                        Text(currentStep < onBoardingConfig.count - 1 ? "Siguiente" : "Empecemos!")
+                            .padding(16)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.purple)
+                            .cornerRadius(16)
+                            .padding(.horizontal, 16)
+                            .foregroundColor(.white)
                 }
-                
-            } label: {
-                Text(currentStep < onBoardingConfig.count - 1 ? "Siguiente" : "Empecemos!")
-                    .padding(16)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.purple)
-                    .cornerRadius(16)
-                    .padding(.horizontal, 16)
-                    .foregroundColor(.white)
-            }
-
         }
         
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        OnboardingView(authenticationViewModel: AuthViewModel())
     }
 }
