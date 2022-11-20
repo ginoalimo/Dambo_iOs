@@ -11,12 +11,12 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-
-    return true
-  }
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        
+        return true
+    }
 }
 
 @main
@@ -26,14 +26,12 @@ struct DembosApp: App {
     
     var body: some Scene {
         WindowGroup {
-          NavigationView {
-              
-              if let _ = authenticationViewModel.user{
-                  HomeView(authenticationViewModel: authenticationViewModel)
-              } else {
-                  OnboardingView(authenticationViewModel: authenticationViewModel)
-              }
-          }
+            if let _ = authenticationViewModel.user{
+                HomeView(authenticationViewModel: authenticationViewModel)
+            } else {
+                AuthenticationLoginView(authenticationViewModel: authenticationViewModel)
+            }
+            
         }
-      }
+    }
 }

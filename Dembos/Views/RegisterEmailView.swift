@@ -32,7 +32,7 @@ struct RegisterEmailView: View {
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 2)
                 TextField("Ingrese correo electronico", text: $emailField)
-                TextField("Ingrese su contrasena", text: $passField)
+                SecureField("Ingrese su contrasena", text: $passField)
                 Button("Registrarse") {
                     authenticationViewModel.createNewUser(email: emailField, password: passField)              }
                 .padding(.top, 18)

@@ -1,10 +1,4 @@
-//
-//  ContentView.swift
-//  Dembos
-//
-//  Created by user231685 on 11/12/22.
-//
-
+import Foundation
 import SwiftUI
 
 struct OnBoardingConfig {
@@ -20,12 +14,10 @@ private let onBoardingConfig = [
 ]
 
 struct OnboardingView: View {
-    @ObservedObject var authenticationViewModel: AuthViewModel
+    @Binding var shouldShowOnboading: Bool
     @State private var currentStep: Int = 0
-    @State var navigated = false
     
     var body: some View {
-        
         
         VStack {
             HStack{
@@ -36,28 +28,28 @@ struct OnboardingView: View {
                     Text("Saltar")
                         .padding(16)
                         .foregroundColor(.gray)
-                        
+                    
                 }
                 
             }
             
             TabView(selection: $currentStep){
                 ForEach(0..<onBoardingConfig.count, id: \.self ) { it in
-                VStack {
-                    Image(onBoardingConfig[it].image)
-                        .padding(.bottom, 10.0)
-                    
-                    Text(onBoardingConfig[it].title)
-                        .font(.title)
-                        .bold()
-                        .padding(.bottom, 10.0)
-                    
-                    Text(onBoardingConfig[it].description)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 32)
+                    VStack {
+                        Image(onBoardingConfig[it].image)
+                            .padding(.bottom, 10.0)
+                        
+                        Text(onBoardingConfig[it].title)
+                            .font(.title)
+                            .bold()
+                            .padding(.bottom, 10.0)
+                        
+                        Text(onBoardingConfig[it].description)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 32)
+                    }
+                    .tag(it)
                 }
-                .tag(it)
-            }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
@@ -77,32 +69,25 @@ struct OnboardingView: View {
             }
             .padding(.bottom, 24)
             
-          NavigationLink("", destination: AuthenticationLoginView(authenticationViewModel: authenticationViewModel), isActive: $navigated)
             
             
-                    Button {
-                        if self.currentStep < onBoardingConfig.count - 1 {
-                            self.currentStep += 1
-                        } else {
-                           self.navigated.toggle()
-                        }
-                        
-                    } label: {
-                        Text(currentStep < onBoardingConfig.count - 1 ? "Siguiente" : "Empecemos!")
-                            .padding(16)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.purple)
-                            .cornerRadius(16)
-                            .padding(.horizontal, 16)
-                            .foregroundColor(.white)
+            Button {
+                if self.currentStep < onBoardingConfig.count - 1 {
+                    self.currentStep += 1
+                } else {
+                    shouldShowOnboading.toggle()
                 }
+            } label: {
+                Text(currentStep < onBoardingConfig.count - 1 ? "Siguiente" : "Empecemos!")
+                    .padding(16)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.purple)
+                    .cornerRadius(16)
+                    .padding(.horizontal, 16)
+                    .foregroundColor(.white)
+            }
+            
         }
         
-    }
-}
-
-struct OnboardingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingView(authenticationViewModel: AuthViewModel())
     }
 }

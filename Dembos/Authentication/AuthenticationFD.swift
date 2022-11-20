@@ -1,9 +1,4 @@
-//
-//  AuthenticationFD.swift
-//  Dembos
-//
-//  Created by user231685 on 11/14/22.
-//
+
 
 import Foundation
 import FirebaseAuth
@@ -13,7 +8,7 @@ struct User {
 }
 
 final class AuthenticationFD {
-    func getCurrentUser() -> User?{
+    func getCurrentUser() -> User? {
         guard let email = Auth.auth().currentUser?.email else {
             return nil
         }

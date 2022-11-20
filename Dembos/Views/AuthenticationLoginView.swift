@@ -1,9 +1,3 @@
-//
-//  EmailLoginView.swift
-//  Dembos
-//
-//  Created by user231685 on 11/13/22.
-//
 
 import SwiftUI
 
@@ -19,6 +13,7 @@ enum AuthenticationView: String, Identifiable {
 struct AuthenticationLoginView: View {
     @ObservedObject var authenticationViewModel: AuthViewModel
     @State private var authenticationView: AuthenticationView?
+    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
     
     var body: some View {
         VStack{
@@ -50,7 +45,17 @@ struct AuthenticationLoginView: View {
                 .tint(.black)
 
             }
+            Button {
+                shouldShowOnboarding.toggle()
+            } label: {
+                Image(systemName: "power")
+                    .foregroundColor(.red)
+            }
+
         }
+        .fullScreenCover(isPresented: $shouldShowOnboarding, content: {
+            OnboardingView(shouldShowOnboading: $shouldShowOnboarding)
+        })
         .sheet(item: $authenticationView) { sheet in
             switch sheet {
             case .register:

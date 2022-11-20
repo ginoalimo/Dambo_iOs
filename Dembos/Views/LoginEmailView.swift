@@ -31,7 +31,7 @@ struct LoginEmailView: View {
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 2)
                 TextField("Ingrese correo electronico", text: $emailField)
-                TextField("Ingrese su contrasena", text: $passField)
+                SecureField("Ingrese su contrasena", text: $passField)
                 Button("Login") {
                     authenticationViewModel.login(email: emailField, password: passField)
                 }
