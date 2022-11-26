@@ -10,7 +10,7 @@ struct HomeView: View {
             VStack {
                 Text("Bienvenido \(authenticationViewModel.user?.email ?? "no user")")
                     .padding(.top, 32)
-                Spacer()
+                Spacer() 
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
