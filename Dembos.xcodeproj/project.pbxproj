@@ -19,6 +19,10 @@
 		75613EB8292094BA00BE6D2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75613EB7292094BA00BE6D2F /* ContentView.swift */; };
 		75613EBA292094BB00BE6D2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75613EB9292094BB00BE6D2F /* Assets.xcassets */; };
 		75613EBD292094BB00BE6D2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75613EBC292094BB00BE6D2F /* Preview Assets.xcassets */; };
+		75747B1C2932807E00D3434C /* Burger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75747B1B2932807E00D3434C /* Burger.swift */; };
+		75747B1E2932810E00D3434C /* BurgerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75747B1D2932810E00D3434C /* BurgerVM.swift */; };
+		75747B2129328F6000D3434C /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75747B2029328F6000D3434C /* FirebaseStorage.swift */; };
+		75747B2329328FAA00D3434C /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75747B2229328FAA00D3434C /* Loader.swift */; };
 		75C1D10F2925AF2C00F6C7DA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C1D10E2925AF2B00F6C7DA /* HomeView.swift */; };
 		75D18A0529209707006939E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D18A0429209707006939E9 /* GoogleService-Info.plist */; };
 		75D18A082920992D006939E9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 75D18A072920992D006939E9 /* FirebaseAnalytics */; };
@@ -45,6 +49,10 @@
 		75613EB7292094BA00BE6D2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		75613EB9292094BB00BE6D2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75613EBC292094BB00BE6D2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		75747B1B2932807E00D3434C /* Burger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burger.swift; sourceTree = "<group>"; };
+		75747B1D2932810E00D3434C /* BurgerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerVM.swift; sourceTree = "<group>"; };
+		75747B2029328F6000D3434C /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
+		75747B2229328FAA00D3434C /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		75C1D10E2925AF2B00F6C7DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		75D18A0429209707006939E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +107,9 @@
 		75613EB4292094BA00BE6D2F /* Dembos */ = {
 			isa = PBXGroup;
 			children = (
+				75747B1F29328F5100D3434C /* Storage */,
+				75747B1A2932805100D3434C /* ViewModel */,
+				75747B192932804A00D3434C /* Model */,
 				75176CC62921C07200DCEA00 /* Views */,
 				75D18A0429209707006939E9 /* GoogleService-Info.plist */,
 				75613EB5292094BA00BE6D2F /* DembosApp.swift */,
@@ -117,6 +128,31 @@
 				75613EBC292094BB00BE6D2F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		75747B192932804A00D3434C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75747B1B2932807E00D3434C /* Burger.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75747B1A2932805100D3434C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				75747B1D2932810E00D3434C /* BurgerVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		75747B1F29328F5100D3434C /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				75747B2029328F6000D3434C /* FirebaseStorage.swift */,
+				75747B2229328FAA00D3434C /* Loader.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		75C1D10D2925A66E00F6C7DA /* Authentication */ = {
@@ -213,17 +249,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75747B1E2932810E00D3434C /* BurgerVM.swift in Sources */,
 				753AAEDC2922B554003689D2 /* RegisterEmailView.swift in Sources */,
 				750025302922EC910086B760 /* AuthRepository.swift in Sources */,
 				75176CC82921C08A00DCEA00 /* AuthenticationLoginView.swift in Sources */,
+				75747B2129328F6000D3434C /* FirebaseStorage.swift in Sources */,
 				75C1D10F2925AF2C00F6C7DA /* HomeView.swift in Sources */,
 				7500252E2922EB240086B760 /* AuthenticationFD.swift in Sources */,
 				751CACE12929ACC0003A0663 /* Onboarding.swift in Sources */,
+				75747B1C2932807E00D3434C /* Burger.swift in Sources */,
 				75613EB8292094BA00BE6D2F /* ContentView.swift in Sources */,
 				75613EB6292094BA00BE6D2F /* DembosApp.swift in Sources */,
 				75176CCA2921C42C00DCEA00 /* LoginEmailView.swift in Sources */,
 				753AAEDE2922B5FC003689D2 /* DismissView.swift in Sources */,
 				750025322922ED800086B760 /* AuthViewModel.swift in Sources */,
+				75747B2329328FAA00D3434C /* Loader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
