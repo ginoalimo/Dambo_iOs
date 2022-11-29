@@ -2,7 +2,7 @@ import Foundation
 import FirebaseFirestore
 
 class BurgerVM: ObservableObject {
-    var number: Int = 1
+    
     @Published var burgers = [Burger]()
     
     private var db = Firestore.firestore()
@@ -14,12 +14,12 @@ class BurgerVM: ObservableObject {
             }
             self.burgers = documents.map{ (QueryDocumentSnapshot) -> Burger in
                 let document = QueryDocumentSnapshot.data()
-                let image = "b\(self.number).png"
+                let image = document["imagen"] as? String ?? ""
                 let nombre = document["nombre"] as? String ?? ""
                 let descripcion = document["descripcion"] as? String ?? ""
                 let precio = document["precio"] as? String ?? ""
                 
-                self.number += 1
+                
                 
                 return Burger(image: image, nombre: nombre, descripcion: descripcion, precio: precio)
                 
