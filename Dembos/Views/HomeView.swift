@@ -18,8 +18,21 @@ struct HomeView: View {
                         VStack(alignment: .leading){
                             Text(burger.nombre).font(.title)
                             Text(burger.descripcion).font(.subheadline)
-                            Text(burger.precio).font(.headline)
+                            Text(String(burger.precio)).font(.headline)
+
                         }.padding(.leading)
+                        
+                        Spacer(minLength: 1)
+                        
+                        Button {
+                            //Codigo de lo que hace el boton.
+                        } label: {
+                            Image(systemName: "plus")
+                                .foregroundColor(.blue)
+                                .padding(10)
+                                .background(Color("pink"))
+                                .clipShape(Circle())
+                        }
                     }
                 }
                 .onAppear(){

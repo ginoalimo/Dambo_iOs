@@ -33,6 +33,10 @@
 		75D18A122920992D006939E9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 75D18A112920992D006939E9 /* FirebaseFirestore */; };
 		75D18A142920992D006939E9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 75D18A132920992D006939E9 /* FirebaseFirestoreSwift */; };
 		75D18A162920992D006939E9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 75D18A152920992D006939E9 /* FirebaseStorage */; };
+		75EEF9152936CE86001F5A27 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEF9142936CE86001F5A27 /* Cart.swift */; };
+		75EEF9172936E459001F5A27 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEF9162936E459001F5A27 /* CartView.swift */; };
+		75EEF9192936E57E001F5A27 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEF9182936E57E001F5A27 /* CartViewModel.swift */; };
+		75EEF91B2936EC5F001F5A27 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEF91A2936EC5F001F5A27 /* ItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,10 @@
 		75747B2229328FAA00D3434C /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		75C1D10E2925AF2B00F6C7DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		75D18A0429209707006939E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		75EEF9142936CE86001F5A27 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		75EEF9162936E459001F5A27 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		75EEF9182936E57E001F5A27 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		75EEF91A2936EC5F001F5A27 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,8 @@
 				75176CC92921C42C00DCEA00 /* LoginEmailView.swift */,
 				753AAEDB2922B554003689D2 /* RegisterEmailView.swift */,
 				753AAEDD2922B5FC003689D2 /* DismissView.swift */,
+				75EEF9162936E459001F5A27 /* CartView.swift */,
+				75EEF91A2936EC5F001F5A27 /* ItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				75747B1B2932807E00D3434C /* Burger.swift */,
+				75EEF9142936CE86001F5A27 /* Cart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				75747B1D2932810E00D3434C /* BurgerVM.swift */,
+				75EEF9182936E57E001F5A27 /* CartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,8 +264,11 @@
 				75747B1E2932810E00D3434C /* BurgerVM.swift in Sources */,
 				753AAEDC2922B554003689D2 /* RegisterEmailView.swift in Sources */,
 				750025302922EC910086B760 /* AuthRepository.swift in Sources */,
+				75EEF91B2936EC5F001F5A27 /* ItemView.swift in Sources */,
+				75EEF9172936E459001F5A27 /* CartView.swift in Sources */,
 				75176CC82921C08A00DCEA00 /* AuthenticationLoginView.swift in Sources */,
 				75747B2129328F6000D3434C /* FirebaseStorage.swift in Sources */,
+				75EEF9192936E57E001F5A27 /* CartViewModel.swift in Sources */,
 				75C1D10F2925AF2C00F6C7DA /* HomeView.swift in Sources */,
 				7500252E2922EB240086B760 /* AuthenticationFD.swift in Sources */,
 				751CACE12929ACC0003A0663 /* Onboarding.swift in Sources */,
@@ -264,6 +279,7 @@
 				753AAEDE2922B5FC003689D2 /* DismissView.swift in Sources */,
 				750025322922ED800086B760 /* AuthViewModel.swift in Sources */,
 				75747B2329328FAA00D3434C /* Loader.swift in Sources */,
+				75EEF9152936CE86001F5A27 /* Cart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

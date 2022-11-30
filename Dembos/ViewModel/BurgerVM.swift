@@ -17,11 +17,11 @@ class BurgerVM: ObservableObject {
                 let image = document["imagen"] as? String ?? ""
                 let nombre = document["nombre"] as? String ?? ""
                 let descripcion = document["descripcion"] as? String ?? ""
-                let precio = document["precio"] as? String ?? ""
+                let precio = document["precio"] as? Float ?? 0.00
                 
                 
                 
-                return Burger(image: image, nombre: nombre, descripcion: descripcion, precio: precio)
+                return Burger(image: image, nombre: nombre, descripcion: descripcion, precio: precio, quantity: 1, offset: 0, isSwiped: false)
                 
             }
         })
