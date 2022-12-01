@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0192560F293912B7008CD9DC /* Burger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192560E293912B7008CD9DC /* Burger.swift */; };
+		0195AE6C2938831D0098EFD8 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195AE6B2938831D0098EFD8 /* Cart.swift */; };
+		019AAD58293808D2004CF929 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AAD57293808D2004CF929 /* HomeViewModel.swift */; };
+		019AAD5A2938205B004CF929 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AAD592938205B004CF929 /* Menu.swift */; };
 		7500252E2922EB240086B760 /* AuthenticationFD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7500252D2922EB240086B760 /* AuthenticationFD.swift */; };
 		750025302922EC910086B760 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7500252F2922EC910086B760 /* AuthRepository.swift */; };
 		750025322922ED800086B760 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750025312922ED800086B760 /* AuthViewModel.swift */; };
@@ -19,7 +23,6 @@
 		75613EB8292094BA00BE6D2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75613EB7292094BA00BE6D2F /* ContentView.swift */; };
 		75613EBA292094BB00BE6D2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75613EB9292094BB00BE6D2F /* Assets.xcassets */; };
 		75613EBD292094BB00BE6D2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75613EBC292094BB00BE6D2F /* Preview Assets.xcassets */; };
-		75747B1C2932807E00D3434C /* Burger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75747B1B2932807E00D3434C /* Burger.swift */; };
 		75747B1E2932810E00D3434C /* BurgerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75747B1D2932810E00D3434C /* BurgerVM.swift */; };
 		75747B2129328F6000D3434C /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75747B2029328F6000D3434C /* FirebaseStorage.swift */; };
 		75747B2329328FAA00D3434C /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75747B2229328FAA00D3434C /* Loader.swift */; };
@@ -33,13 +36,16 @@
 		75D18A122920992D006939E9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 75D18A112920992D006939E9 /* FirebaseFirestore */; };
 		75D18A142920992D006939E9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 75D18A132920992D006939E9 /* FirebaseFirestoreSwift */; };
 		75D18A162920992D006939E9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 75D18A152920992D006939E9 /* FirebaseStorage */; };
-		75EEF9152936CE86001F5A27 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEF9142936CE86001F5A27 /* Cart.swift */; };
 		75EEF9172936E459001F5A27 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEF9162936E459001F5A27 /* CartView.swift */; };
 		75EEF9192936E57E001F5A27 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEF9182936E57E001F5A27 /* CartViewModel.swift */; };
 		75EEF91B2936EC5F001F5A27 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEF91A2936EC5F001F5A27 /* ItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0192560E293912B7008CD9DC /* Burger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burger.swift; sourceTree = "<group>"; };
+		0195AE6B2938831D0098EFD8 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		019AAD57293808D2004CF929 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		019AAD592938205B004CF929 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		7500252D2922EB240086B760 /* AuthenticationFD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFD.swift; sourceTree = "<group>"; };
 		7500252F2922EC910086B760 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		750025312922ED800086B760 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -53,13 +59,11 @@
 		75613EB7292094BA00BE6D2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		75613EB9292094BB00BE6D2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75613EBC292094BB00BE6D2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		75747B1B2932807E00D3434C /* Burger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burger.swift; sourceTree = "<group>"; };
 		75747B1D2932810E00D3434C /* BurgerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerVM.swift; sourceTree = "<group>"; };
 		75747B2029328F6000D3434C /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		75747B2229328FAA00D3434C /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		75C1D10E2925AF2B00F6C7DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		75D18A0429209707006939E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		75EEF9142936CE86001F5A27 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		75EEF9162936E459001F5A27 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		75EEF9182936E57E001F5A27 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		75EEF91A2936EC5F001F5A27 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				753AAEDD2922B5FC003689D2 /* DismissView.swift */,
 				75EEF9162936E459001F5A27 /* CartView.swift */,
 				75EEF91A2936EC5F001F5A27 /* ItemView.swift */,
+				019AAD592938205B004CF929 /* Menu.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,8 +148,8 @@
 		75747B192932804A00D3434C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				75747B1B2932807E00D3434C /* Burger.swift */,
-				75EEF9142936CE86001F5A27 /* Cart.swift */,
+				0195AE6B2938831D0098EFD8 /* Cart.swift */,
+				0192560E293912B7008CD9DC /* Burger.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			children = (
 				75747B1D2932810E00D3434C /* BurgerVM.swift */,
 				75EEF9182936E57E001F5A27 /* CartViewModel.swift */,
+				019AAD57293808D2004CF929 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -261,25 +267,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0192560F293912B7008CD9DC /* Burger.swift in Sources */,
 				75747B1E2932810E00D3434C /* BurgerVM.swift in Sources */,
 				753AAEDC2922B554003689D2 /* RegisterEmailView.swift in Sources */,
 				750025302922EC910086B760 /* AuthRepository.swift in Sources */,
+				019AAD58293808D2004CF929 /* HomeViewModel.swift in Sources */,
 				75EEF91B2936EC5F001F5A27 /* ItemView.swift in Sources */,
 				75EEF9172936E459001F5A27 /* CartView.swift in Sources */,
 				75176CC82921C08A00DCEA00 /* AuthenticationLoginView.swift in Sources */,
 				75747B2129328F6000D3434C /* FirebaseStorage.swift in Sources */,
 				75EEF9192936E57E001F5A27 /* CartViewModel.swift in Sources */,
+				0195AE6C2938831D0098EFD8 /* Cart.swift in Sources */,
+				019AAD5A2938205B004CF929 /* Menu.swift in Sources */,
 				75C1D10F2925AF2C00F6C7DA /* HomeView.swift in Sources */,
 				7500252E2922EB240086B760 /* AuthenticationFD.swift in Sources */,
 				751CACE12929ACC0003A0663 /* Onboarding.swift in Sources */,
-				75747B1C2932807E00D3434C /* Burger.swift in Sources */,
 				75613EB8292094BA00BE6D2F /* ContentView.swift in Sources */,
 				75613EB6292094BA00BE6D2F /* DembosApp.swift in Sources */,
 				75176CCA2921C42C00DCEA00 /* LoginEmailView.swift in Sources */,
 				753AAEDE2922B5FC003689D2 /* DismissView.swift in Sources */,
 				750025322922ED800086B760 /* AuthViewModel.swift in Sources */,
 				75747B2329328FAA00D3434C /* Loader.swift in Sources */,
-				75EEF9152936CE86001F5A27 /* Cart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,11 +418,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Dembos/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Por favor autorizar localizacion para proceder con el delivery";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,11 +448,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Dembos/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Por favor autorizar localizacion para proceder con el delivery";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

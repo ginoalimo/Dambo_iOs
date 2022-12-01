@@ -8,7 +8,7 @@ struct Burger: Identifiable{
     var descripcion: String
     var precio: Float
     var quantity: Int
-    var offset: CGFloat
+    var offset: Double
     var isSwiped: Bool
     
 }
