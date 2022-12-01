@@ -27,7 +27,7 @@ struct DembosApp: App {
     var body: some Scene {
         WindowGroup {
             if let _ = authenticationViewModel.user{
-                HomeView(item: , authenticationViewModel: authenticationViewModel)
+                HomeView(authenticationViewModel: authenticationViewModel)
             } else {
                 AuthenticationLoginView(authenticationViewModel: authenticationViewModel)
             }

@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Binding var item: Burger
+    
     @StateObject var HomeModel = HomeViewModel()
     @ObservedObject var authenticationViewModel: AuthViewModel
     @ObservedObject var burgerVM = BurgerVM()
@@ -15,58 +15,7 @@ struct HomeView: View {
                     .padding(.top, 2)
                 
                 VStack {
-                    HStack(spacing: 15){
-                        FirebaseStorage(id: item.image)
-                            .cornerRadius(15)
-                        VStack(alignment: .leading, spacing: 10){
-                            Text(item.nombre)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.black)
-                            Text(item.descripcion)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.gray)
-                            HStack(spacing: 15){
-                                Text(getPrice(value:item.precio))
-                                    .font(.title2)
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.black)
-                                Spacer(minLength: 0)
-                                Button ( action:{
-                                    if item.quantity > 1{
-                                        item.quantity -= 1
-                                    }
-                                }){
-                                    Image(systemName: "minus")
-                                        .font(.system(size: 16, weight: .heavy))
-                                        .foregroundColor(.black)
-                                }
-                                Text("\(item.quantity)")
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.black)
-                                    .padding(.vertical, 5)
-                                    .padding(.horizontal, 10)
-                                    .background(Color.black.opacity(0.06))
-                                Button (action: {item.quantity += 1})
-                                {
-                                    Image(systemName: "plus")
-                                        .font(.system(size: 16, weight: .heavy))
-                                        .foregroundColor(.black)
-                                }
-
-                            }
-                        }
-                            
-                    }
-                    .padding()
-                    .background(Color("white"))
-                    .contentShape(Rectangle())
-                    .offset(x: item.offset)
-                    
-                                NavigationLink(destination: CartView()) {
-                                    Text("Click para ir a CartView")
-                                }
-               
-                    ZStack{
+                    VStack{
                         VStack(spacing: 10){
                             HStack(spacing : 15){
                                 Button(action: {
@@ -97,27 +46,27 @@ struct HomeView: View {
                                             .font(.title2)
                                             .foregroundColor(.gray)
                                     })
-                                    .animation(.easeIn)
+                                    .animation(.easeIn, value: self.HomeModel)
                                 }
                             }
                             .padding(.horizontal)
                             .padding(.top,10)
                             Divider()
-                            Spacer()
+                            
                         }
-                        HStack{
-                            Menu(homeData: HomeModel)
-                            //Move Effect from left
-                                .offset(x: HomeModel.showMenu ? 0 : -UIScreen.main.bounds.width / 1.6)
-                            Spacer(minLength: 0)
-                        }
-                        .background(Color.black.opacity(HomeModel.showMenu ? 0.3 : 0).ignoresSafeArea()
-                            .onTapGesture(perform: {
-                                withAnimation(.easeIn){
-                                    HomeModel.showMenu.toggle()
-                                }
-                            })
-                        )
+//                        HStack{
+//                            Menu(homeData: HomeModel)
+//                            //Move Effect from left
+//                                .offset(x: HomeModel.showMenu ? 0 : -UIScreen.main.bounds.width / 1.6)
+//                            Spacer(minLength: 0)
+//                        }
+//                        .background(Color.black.opacity(HomeModel.showMenu ? 0.3 : 0).ignoresSafeArea()
+//                            .onTapGesture(perform: {
+//                                withAnimation(.easeIn){
+//                                    HomeModel.showMenu.toggle()
+//                                }
+//                            })
+//                        )
                         
                         //No Localizacion
                         if HomeModel.noLocation{
@@ -129,15 +78,62 @@ struct HomeView: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 .background(Color.black.opacity(0.3).ignoresSafeArea())
                         }
+                        
+                        VStack {
+                            List(burgerVM.burgers) { burger in
+                                HStack(spacing: 15){
+                                    
+                                    FirebaseStorage(id: burger.image)
+                                        .cornerRadius(15)
+                                    VStack(alignment: .leading, spacing: 10){
+                                        Text(burger.nombre)
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(.black)
+                                        Text(burger.descripcion)
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(.gray)
+                                        HStack(spacing: 15){
+                                            Text(getPrice(value: burger.precio))
+                                                .font(.title2)
+                                                .fontWeight(.heavy)
+                                                .foregroundColor(.black)
+                                            Spacer()
+                                            Button {
+                                                //Codigo de lo que hace el boton.
+                                                
+                                            } label: {
+                                                Image(systemName: "plus")
+                                                    .foregroundColor(.blue)
+                                                    .padding(10)
+                                                    .background(Color("pink"))
+                                                    .clipShape(Circle())
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                                .padding()
+                                .background(Color("white"))
+                                .contentShape(Rectangle())
+                                .offset(x: burger.offset)
+                            }
+                            
+                        }
+                        
+                        
+                        
                     }
                     .onAppear(perform: {
                         //llamando localizacion delegate
                         HomeModel.locationManager.delegate = HomeModel
+                        
+                        self.burgerVM.getData()
+                        
                         //HomeModel.locationManager.requestWhenInUseAuthorization()
                         //modificando Dembos -> info -> Privacy - Location when usage Description
                         
                     })
-               
+                    
                 }
                 
             }
@@ -149,16 +145,25 @@ struct HomeView: View {
                 Button("Logout"){
                     authenticationViewModel.logout()
                 }
+                Spacer()
+                HStack {
+                    NavigationLink(destination: CartView()) {
+                        HStack {
+                            Image(systemName: "cart")
+                            Spacer()
+                        }
+                    }.navigationBarBackButtonHidden(true)
+                }
+                
             }
         }
-        
-        
-        
-        
-        
-        
     }
 }
 
 
 
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView(authenticationViewModel: AuthViewModel())
+    }
+}
