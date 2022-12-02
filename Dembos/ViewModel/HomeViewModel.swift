@@ -2,7 +2,7 @@ import SwiftUI
 import CoreLocation
 import Firebase
 import simd
-//Fetching Usuario localizando..
+
 class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate{
     
     @Published var locationManager = CLLocationManager()
@@ -16,6 +16,7 @@ class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate{
     @Published var showMenu = false
    
     @Published var items : [Burger] = []
+    @Published var filtered : [Burger] = []
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         // Check acceso de localizacion
@@ -78,6 +79,17 @@ class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate{
                 
                 return Burger(id: id, image: image, nombre: nombre, descripcion: descripcion, precio: precio, quantity: 1, offset: 0, isSwiped: false)
             })
+            
+            self.filtered = self.items
+        }
+    }
+    
+    func filterData() {
+        
+        withAnimation(.linear){
+            self.filtered = self.items.filter{
+                return $0.nombre.lowercased().contains(self.search.lowercased())
+            }
         }
     }
     

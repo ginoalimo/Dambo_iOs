@@ -11,6 +11,7 @@ import simd
 struct CartView: View {
     @StateObject var carData = BurgerVM()
     @Environment(\.presentationMode) var present
+    @State private var showingAlert = false
     var body: some View {
         VStack{
             
@@ -20,6 +21,7 @@ struct CartView: View {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 26, weight: .heavy))
                         .foregroundColor(.black)
+                        .padding(.horizontal)
                 }
                 
                 Text("Carrito")
@@ -56,8 +58,11 @@ struct CartView: View {
                         .foregroundColor(.black)
                 }.padding([.top,.horizontal])
                 
-                Button(action: {}) {
-                    Text("Check out")
+                Button(action: {
+                    showingAlert = true
+                    present.wrappedValue.dismiss()
+                }) {
+                    Text("Realizar Compra")
                         .font(.title2)
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
@@ -67,6 +72,8 @@ struct CartView: View {
                             LinearGradient(gradient: .init(colors:[Color("lightblue"),Color("blue")]), startPoint: .leading, endPoint: .trailing)
                         )
                         .cornerRadius(15)
+                }.alert("Compra por \(calculateTotalPrice()) realizada exitosamente", isPresented: $showingAlert){
+                    Button("OK", role: .cancel) {}
                 }
             }
             .background(Color.white)

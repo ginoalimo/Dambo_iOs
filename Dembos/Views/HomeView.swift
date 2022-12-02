@@ -37,9 +37,8 @@ struct HomeView: View {
                             }
                             .padding([.horizontal,.top])
                             Divider()
-                            HStack(spacing: 15){
+                            HStack(spacing: 0){
                                 TextField("Search", text: $HomeModel.search)
-                                //Slide Menu para el carrito
                                 if HomeModel.search != ""{
                                     Button(action: {}, label: {
                                         Image(systemName: "magnifyingglass")
@@ -51,23 +50,8 @@ struct HomeView: View {
                             }
                             .padding(.horizontal)
                             .padding(.top,10)
-                            Divider()
                             
                         }
-//                        HStack{
-//                            Menu(homeData: HomeModel)
-//                            //Move Effect from left
-//                                .offset(x: HomeModel.showMenu ? 0 : -UIScreen.main.bounds.width / 1.6)
-//                            Spacer(minLength: 0)
-//                        }
-//                        .background(Color.black.opacity(HomeModel.showMenu ? 0.3 : 0).ignoresSafeArea()
-//                            .onTapGesture(perform: {
-//                                withAnimation(.easeIn){
-//                                    HomeModel.showMenu.toggle()
-//                                }
-//                            })
-//                        )
-                        
                         //No Localizacion
                         if HomeModel.noLocation{
                             Text("Por favor activa la localizacion en su configuracion para seguir el proceso de compra!!!")
@@ -99,13 +83,12 @@ struct HomeView: View {
                                                 .foregroundColor(.black)
                                             Spacer()
                                             Button {
-                                                //Codigo de lo que hace el boton.
+                                                
                                                 
                                             } label: {
                                                 Image(systemName: "plus")
                                                     .foregroundColor(.blue)
                                                     .padding(10)
-                                                    .background(Color("pink"))
                                                     .clipShape(Circle())
                                             }
                                         }
@@ -133,6 +116,20 @@ struct HomeView: View {
                         //modificando Dembos -> info -> Privacy - Location when usage Description
                         
                     })
+                    .onChange(of: HomeModel.search, perform: { value in
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                            
+                            if value == HomeModel.search && HomeModel.search != ""{
+                                HomeModel.filterData()
+                            }
+                            
+                            if HomeModel.search == ""{
+                                withAnimation(.linear){
+                                    HomeModel.filtered = HomeModel.items
+                                }
+                            }
+                        }
+                    })
                     
                 }
                 
@@ -147,12 +144,12 @@ struct HomeView: View {
                 }
                 Spacer()
                 HStack {
-                    NavigationLink(destination: CartView()) {
+                    NavigationLink(destination: CartView().navigationBarBackButtonHidden(true) ) {
                         HStack {
                             Image(systemName: "cart")
                             Spacer()
                         }
-                    }.navigationBarBackButtonHidden(true)
+                    }
                 }
                 
             }
